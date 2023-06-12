@@ -4,12 +4,12 @@ const Genre = require("./Genre");
 const Movie = require("./Movie");
 
 // tabla pivote: MoviesActors
-Movie.belongsToMany(Actor, { through: 'MoviesGenres' });
-Actor.belongsToMany(Movie, { through: 'MoviesGenres' });
+Movie.belongsToMany(Actor, { through: 'MoviesActors' });
+Actor.belongsToMany(Movie, { through: 'MoviesActors' });
 
 // tabla pivote: MoviesDirectors
-Movie.belongsToMany(Director, { through: 'MoviesGenres' });
-Director.belongsToMany(Movie, { through: 'MoviesGenres' });
+Movie.belongsToMany(Director, { through: 'MoviesDirectors' });
+Director.belongsToMany(Movie, { through: 'MoviesDirectors' });
 
 // table pivote: MoviesGenres
 Movie.belongsToMany(Genre, { through: 'MoviesGenres' });
